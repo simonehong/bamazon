@@ -100,10 +100,11 @@ let purchase = () => {
                             console.log(" - - - - - - - - - - - - - - - ")
                             console.log("To shop again with us please input 'node bamazonCustomer.js' into your command line again.")
                             console.log("\n")
-                            console.log(" Remaining Qty: " + productInfo.stock_quantity);
+                            
 
                             // End the database connection and close the app
                             connection.end();
+                        
                         })
                     } else {
                         console.log("Sorry, there is not enough " + productInfo.product_name + " in stock.")
