@@ -83,7 +83,7 @@ let purchase = () => {
                     let productInfo = res[0]
 
                     if (quantity <= productInfo.stock_quantity) {
-                        console.log(productInfo.product_name + "is in stock! Placing order now!")
+                        console.log(productInfo.product_name + " is in stock! Placing order now!")
                         console.log("\n")
 
                         // the updating query string
@@ -98,12 +98,13 @@ let purchase = () => {
                             console.log("Your total is $" + productInfo.price * quantity)
                             console.log("Thank you for shopping with bamazon!")
                             console.log(" - - - - - - - - - - - - - - - ")
-                            console.log("To shop again with us please input 'node bamazonCustomer.js' into your command line again.")
                             console.log("\n")
+                            
                             
 
                             // End the database connection and close the app
                             connection.end();
+                           
                         
                         })
                     } else {
@@ -116,7 +117,7 @@ let purchase = () => {
                         setTimeout(function() { displayInventory() }, 3000)
                     }
 
-
+                    console.log("Qty remaining = " + productInfo.stock_quantity)
                 }
             })
 
